@@ -7,13 +7,17 @@ git clone https://github.com/pfreiberg/paymenttracker.git
 Build
 -----
 Apache Maven: 3.2.1
+
 Java: 1.7
+
 Go to project folder ("folder-where-you-clone\paymenttracker\paymenttracker") and build with "mvn clean install". Output will be in target folder.
 
 Run
 -----
 java -jar target\paymenttracker-0.0.1-SNAPSHOT.jar
+
 or 
+
 java -jar target\paymenttracker-0.0.1-SNAPSHOT.jar file-path
 
 Details about program
