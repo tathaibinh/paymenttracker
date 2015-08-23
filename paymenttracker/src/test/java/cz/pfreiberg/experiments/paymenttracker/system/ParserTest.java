@@ -44,6 +44,11 @@ public class ParserTest {
 		parser.parseRow("USD 9..00");
 	}
 	
+	@Test(expected = ParserException.class)
+	public void parseRow_Reversed_ExceptionTrue() throws ParserException {
+		parser.parseRow("900 USD");
+	}
+	
 	@Test
 	public void parseRow_ValidCash_ExceptionFalse() throws ParserException {
 		parser.parseRow("USD 900");
@@ -57,10 +62,6 @@ public class ParserTest {
 	@Test
 	public void parseRow_ManyBlankSpacesBetween_ExceptionFalse() throws ParserException {
 		parser.parseRow("  USD    900.5   ");
-	}
-	
-	public void parseRow_Reversed_ExceptionFalse() throws ParserException {
-		parser.parseRow("900 USD");
 	}
 
 }
