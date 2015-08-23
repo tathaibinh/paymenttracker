@@ -76,7 +76,7 @@ public class TransactionSystem {
 		try {
 
 			properties.load(new
-					FileInputStream("src/main/resources/currency_rates.properties"));
+					FileInputStream("currency_rates.properties"));
 
 		} catch (IOException e) {
 			logger.error("Error while loading file with currency rates. Conversions cannot be displayed.");

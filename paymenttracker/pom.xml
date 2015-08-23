@@ -89,5 +89,12 @@
 		</dependency>
 
 	</dependencies>
+	
+	<resources>
+  <resource>  
+    <directory>src/main/resources/</directory>
+    <targetPath>src/main/resources/</targetPath>
+  </resource>  
+</resources>
 
 </project>
