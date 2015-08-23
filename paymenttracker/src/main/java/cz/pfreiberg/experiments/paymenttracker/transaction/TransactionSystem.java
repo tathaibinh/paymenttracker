@@ -1,5 +1,6 @@
 package cz.pfreiberg.experiments.paymenttracker.transaction;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -12,7 +13,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import cz.pfreiberg.experiments.paymenttracker.model.TypeOfOperation;
-import cz.pfreiberg.experiments.paymenttracker.system.PaymentTracker;
 
 /**
  * Stores and operates (via Transaction class) with actual bank balances and currency rates.
@@ -75,8 +75,8 @@ public class TransactionSystem {
 		Properties properties = new Properties();
 		try {
 
-			properties.load(TransactionSystem.class
-					.getResourceAsStream("currency_rates.properties"));
+			properties.load(new
+					FileInputStream("src/main/resources/currency_rates.properties"));
 
 		} catch (IOException e) {
 			logger.error("Error while loading file with currency rates. Conversions cannot be displayed.");
