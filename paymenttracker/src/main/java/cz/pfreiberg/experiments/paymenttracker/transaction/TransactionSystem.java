@@ -75,7 +75,7 @@ public class TransactionSystem {
 		Properties properties = new Properties();
 		try {
 
-			properties.load(PaymentTracker.class
+			properties.load(TransactionSystem.class
 					.getResourceAsStream("currency_rates.properties"));
 
 		} catch (IOException e) {
