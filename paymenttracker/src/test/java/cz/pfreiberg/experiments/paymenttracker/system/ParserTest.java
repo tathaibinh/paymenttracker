@@ -1,7 +1,5 @@
 package cz.pfreiberg.experiments.paymenttracker.system;
 
-import java.io.IOException;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -18,10 +16,7 @@ public class ParserTest {
 
 	@Before
 	public void initParser() {
-		try {
-			parser = new Parser("pom.xml");
-		} catch (IOException e) {
-		}
+			parser = new Parser();
 	}
 
 	@Test(expected = ParserException.class)
