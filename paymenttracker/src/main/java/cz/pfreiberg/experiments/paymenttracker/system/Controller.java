@@ -73,8 +73,8 @@ public class Controller {
 			consumerThread.join();
 		} catch (InterruptedException e) {
 			logger.error(
-					"When executing transactions from a file an error appeared.",
-					e);
+					"When executing transactions from a file an error appeared.");
+			logger.debug("Stack trace", e);
 		}
 
 		if (printerThread.isAlive()) {
@@ -98,7 +98,8 @@ public class Controller {
 					try {
 						payment = parser.getNextTransaction();
 					} catch (ParserException e) {
-						logger.error("Error during parsing.", e);
+						logger.error(e.getMessage());
+						logger.debug("Stack trace", e);
 						continue;
 					}
 
@@ -136,7 +137,8 @@ public class Controller {
 				} catch (InterruptedException e) {
 					logger.error(
 							"Error during storing payment: "
-									+ payment.toString(), e);
+									+ payment.toString());
+					logger.debug("Stack trace", e);
 					Thread.currentThread().interrupt();
 				}
 			}
@@ -164,7 +166,8 @@ public class Controller {
 				try {
 					payment = (parser.parseRow(line));
 				} catch (ParserException e) {
-					logger.error("Error during parsing.", e);
+					logger.error(e.getMessage());
+					logger.debug("Stack trace", e);
 					continue;
 				}
 

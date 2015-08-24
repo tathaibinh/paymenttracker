@@ -30,9 +30,11 @@ public class PaymentTracker {
 				Controller controller = new Controller(pathToFile);
 				controller.run(true);
 			} catch (FileNotFoundException e) {
-				logger.fatal("Input file was not found, or can't be read.", e);
+				logger.fatal("Input file was not found, or can't be read.");
+				logger.debug("Stack trace", e);
 			} catch (IOException e) {
-				logger.fatal("Error during reading input file.", e);
+				logger.fatal("Fatal error during reading input file.");
+				logger.debug("Stack trace", e);
 			}
 		} else {
 			String errorMessage = "Program accepts one parameter with file path, or none parameter at all.";

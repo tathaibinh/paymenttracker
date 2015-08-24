@@ -51,7 +51,8 @@ public class Parser {
 		try {
 			currentRow = br.readLine();
 		} catch (IOException e) {
-			logger.error("Error while loading transaction.", e);
+			logger.error("Error while loading transaction.");
+			logger.debug("Stack trace", e);
 		}
 		return currentRow;
 	}

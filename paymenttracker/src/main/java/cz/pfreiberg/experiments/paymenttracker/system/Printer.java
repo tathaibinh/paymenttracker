@@ -1,5 +1,8 @@
 package cz.pfreiberg.experiments.paymenttracker.system;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import cz.pfreiberg.experiments.paymenttracker.transaction.TransactionSystem;
 
 /**
@@ -9,6 +12,8 @@ import cz.pfreiberg.experiments.paymenttracker.transaction.TransactionSystem;
  * 
  */
 public class Printer implements Runnable {
+	
+	private static final Logger logger = LogManager.getLogger(Printer.class);
 
 	private TransactionSystem paymentSystem;
 
@@ -23,7 +28,7 @@ public class Printer implements Runnable {
 				Thread.sleep(60000);
 			}
 		} catch (InterruptedException e) {
-			System.out.print("Closing balance:\n");
+			logger.info("Closing balance:\n");
 			paymentSystem.printBankAccounts();
 		}
 	}
