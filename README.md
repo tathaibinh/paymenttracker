@@ -30,6 +30,12 @@ All payments are stored in HashMap<String, BigDecimal> and are printed every one
 
 Program includes Javadoc, JUnit (tests run at build) and log4j.
 
+Logging
+-----
+The program uses granularity in logging and logging to console and file.
+
+Stack trace is logged on the DEBUG level. For the purpose of the demonstration of the program is debug printed to the console, but in normal operation would be logged only to the file (ordinary users are freed from details).
+
 Bonus
 -----
 Program contains "currency_rates.properties" with currency rates. File can be edited easily, so more currency rates could be added. In case of frequent changes, it would be better to add another parameter, so user would specify the file path with actual courses.
